@@ -3,62 +3,62 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage[polish]{babel}
-\usepackage{polski}
+\usepackage{url}
 \input{pygments}
 
 \usetheme{Pittsburgh}
 \usenavigationsymbolstemplate{} % turn off navigation icons
 \setbeamercovered{transparent}
 
-\author{Śląska Grupa Użytkowników języka Ruby\\
+\author{Silesian Ruby Users Group\\
   \footnotesize{Jakub Kuźma}}
-\title{Podstawy tworzenia aplikacji internetowych z wykorzystaniem YUI 3 i Rails 3}
+\title{RIA development using YUI 3 and Rails 3}
 
 \begin{document}
 
 \frame{\titlepage}
 
 \begin{frame}
-  \frametitle{Wstęp}
+  \frametitle{Introduction}
   \begin{center}
-    Bogata aplikacja internetowa?
+    Rich Internet Application?
   \end{center}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Brydż - licytacja}
+  \frametitle{Contract bridge - auction}
   \begin{figure}
     \includegraphics[width=\linewidth]{bbo-auction.png}
   \end{figure}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Brydż - rozgrywka}
+  \frametitle{Contract bridge - play}
   \begin{figure}
     \includegraphics[width=\linewidth]{bbo-play.png}
   \end{figure}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Wymagania}
+  \frametitle{Requirements}
   \begin{itemize}
-  \item komunikacja z serwerem bez przeładowania strony
-  \item walidacja działań użytkownika przed wysłaniem żądania
-  \item rozbicie interfejsu na małe, niezależne elementy
+  \item client-server communication without refreshing page
+  \item client side validation
+  \item interface composed of small, independent elements
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{jQuery}
   \begin{center}
-    absurdalnie prosty AJAX, obsługa zdarzeń, manipulacja DOM
+    ridiculously easy AJAX, event handling, DOM manipulation
   \end{center}
 \end{frame}
 
 \begin{frame}
   \frametitle{jQuery UI}
   \begin{center}
-    jQuery UI jest tym dla RIA, czym jQuery było dla AJAX
+    jQuery UI for RIA is like jQuery for AJAX development
   \end{center}
 \end{frame}
 
@@ -70,7 +70,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{YUI 3 - w rolach głównych}
+  \frametitle{YUI 3}
   \begin{itemize}
   \item Developer Tools
   \item Core
@@ -94,35 +94,35 @@
 \begin{frame}
   \frametitle{Attribute}
   \begin{itemize}
-  \item settery, gettery, walidatory
-  \item zdarzenie attributeChanged
-  \item klonowanie obiektów
-  \item obsługa zagnieżdżonych wartości (np. strings.messages.hello)
+  \item getters, setters, validation
+  \item attributeChange event
+  \item object cloning
+  \item nested objects support (i.e. strings.messages.hello)
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Attribute - przykład}
+  \frametitle{Attribute - example}
   \input{attribute}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Attribute - użycie}
+  \frametitle{Attribute - usage}
   \input{attribute-usage}
 \end{frame}
 
 \begin{frame}
   \frametitle{Base}
   \begin{itemize}
-  \item konstruktor i destruktor
-  \item atrybuty
-  \item obsługa zdarzeń
-  \item obsługa rozszerzeń i wtyczek
+  \item constructor and destructor
+  \item attributes
+  \item event target
+  \item extension and plugin support
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Base - przykład}
+  \frametitle{Base - example}
   \input{base}
 \end{frame}
 
@@ -147,28 +147,31 @@
 \begin{frame}
   \frametitle{Plugin}
   \begin{itemize}
-  \item nieinwazyjne ,,wzbogacanie'' obiektów
-  \item afterHostEvent, beforeHostMethod, itp.
+  \item unobtrusively enhance objects (aka hosts)
+  \item afterHostEvent, beforeHostMethod, etc.
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Plugin - przykład}
-  \input{plugin}
+  \frametitle{Plugin - example}
+  \begin{footnotesize}
+    \input{plugin}
+  \end{footnotesize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Custom Events}
   \begin{itemize}
-  \item niezależne od DOM
-  \item to samo API (bubbling - stopPropagation, defaultFn - preventDefault)
+  \item DOM independent
+  \item same API and behavior (bubbling - stopPropagation, defaultFn - preventDefault)
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Inne}
+  \frametitle{Other stuff}
   \begin{itemize}
-  \item operacje na tablicach (every, find, reduce, itp.)
+  \item more array utilities: every, find, reduce, etc.
+  \item language helpers: isArray, isValue, isString, etc.
   \item OOP (augment, extend, bind, rbind)
   \item YUI 3 Gallery
   \end{itemize}
@@ -177,28 +180,41 @@
 \begin{frame}
   \frametitle{Rails 3}
   \begin{itemize}
-  \item logika gry - walidacja
-  \item tradycyjny serwis webowy oraz API % respondery - zmiana pollingu na websockety
+  \item ordinary web application (authentication, statistics, etc.)
+  \item API (responders rock)
+  \item validating user actions
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{node.js}
   \begin{itemize}
-  \item YUI3 to CommonJS
-  \item podmiana modułu Get
-  \item obsługa DOM dzięki jsdom
+  \item YUI3 is CommonJS
+  \item replace Get module (require instead of <script>)
+  \item DOM support by jsdom
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Warto zwrócić uwagę}
+  \frametitle{Resources}
   \begin{itemize}
-  \item underscore.js
-  \item mustache.js
+  \item YUI3 \\\url{http://developer.yahoo.com/yui/3/}
+  \item Bridge App \\\url{http://github.com/morgoth/bridge/}
+  \item underscore.js \\\url{http://documentcloud.github.com/underscore/}
+  \item mustache.js \\\url{http://github.com/janl/mustache.js/}
   \end{itemize}
 \end{frame}
 
-% slajd z Drogusem? :-)
+\begin{frame}
+  \begin{figure}
+    \includegraphics[width=\linewidth]{drogus.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{Questions?}
+  \end{center}
+\end{frame}
 
 \end{document}
