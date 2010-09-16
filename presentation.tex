@@ -4,13 +4,11 @@
 \usepackage{graphicx}
 \usepackage[polish]{babel}
 \usepackage{polski}
-\usepackage{color}
+\input{pygments}
 
 \usetheme{Pittsburgh}
 \usenavigationsymbolstemplate{} % turn off navigation icons
 \setbeamercovered{transparent}
-
-\input{pygments}
 
 \author{Śląska Grupa Użytkowników języka Ruby\\
   \footnotesize{Jakub Kuźma}}
@@ -23,7 +21,7 @@
 \begin{frame}
   \frametitle{Wstęp}
   \begin{center}
-    Zaawansowana aplikacja internetowa?
+    Bogata aplikacja internetowa?
   \end{center}
 \end{frame}
 
@@ -103,6 +101,16 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Attribute - przykład}
+  \input{attribute}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Attribute - użycie}
+  \input{attribute-usage}
+\end{frame}
+
 \begin{frame}
   \frametitle{Base}
   \begin{itemize}
@@ -111,6 +119,11 @@
   \item obsługa zdarzeń
   \item obsługa rozszerzeń i wtyczek
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Base - przykład}
+  \input{base}
 \end{frame}
 
 \begin{frame}
@@ -124,12 +137,24 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Widget - przykład}
+  \begin{footnotesize}
+    \input{widget}
+  \end{footnotesize}
+\end{frame}
+
 \begin{frame}
   \frametitle{Plugin}
   \begin{itemize}
   \item nieinwazyjne ,,wzbogacanie'' obiektów
   \item afterHostEvent, beforeHostMethod, itp.
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Plugin - przykład}
+  \input{plugin}
 \end{frame}
 
 \begin{frame}

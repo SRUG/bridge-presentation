@@ -4,6 +4,7 @@ task :default => [:evince]
 
 SRC = "presentation.tex"
 RUBY_SRC = FileList["**/*.rb"]
+JAVASCRIPT_SRC = FileList["**/*.js"]
 ERB_SRC = FileList["**/*.rhtml"]
 HTML_SRC = FileList["**/*.html"]
 XML_SRC = FileList["**/*.xml"]
@@ -26,6 +27,10 @@ rule ".png" => ".svg" do |t|
   sh "inkscape -e #{t.name} #{t.source}"
 end
 
+rule ".tex" => ".js" do |t|
+  sh "pygmentize -f latex -o #{t.name} #{t.source}"
+end
+
 rule ".tex" => ".rb" do |t|
   sh "pygmentize -f latex -o #{t.name} #{t.source}"
 end
@@ -46,7 +51,7 @@ rule ".pdf" => ".tex" do |t|
   pdflatex(t.source)
 end
 
-file SRC.ext("pdf") => [SRC] + RUBY_SRC.ext("tex") + ERB_SRC.ext("tex") + HTML_SRC.ext("tex") + XML_SRC.ext("tex") + SVG_IMG.ext("png")
+file SRC.ext("pdf") => [SRC] + JAVASCRIPT_SRC.ext("tex") + RUBY_SRC.ext("tex") + ERB_SRC.ext("tex") + HTML_SRC.ext("tex") + XML_SRC.ext("tex") + SVG_IMG.ext("png")
 
 desc "Compile PDF"
 task :pdf => SRC.ext("pdf")
